@@ -6,6 +6,8 @@ use GuzzleHttp\ClientInterface;
 use Firebase\JWT\JWT;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\UriInterface;
+use CommerceGuys\Guzzle\Oauth2\GrantType\GrantTypeBase;
+use JWT;
 use SplFileObject;
 use InvalidArgumentException;
 
@@ -76,8 +78,6 @@ class JwtBearer extends GrantTypeBase
      * Read private key.
      *
      * @param SplFileObject $privateKey
-     *
-     * @return string
      */
     protected function readPrivateKey(SplFileObject $privateKey)
     {

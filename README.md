@@ -15,6 +15,9 @@ This version is intended for Guzzle 6:
 - Supports refresh tokens (stores them and uses them to get new access tokens).
 - Handles token expiration (acquires new tokens and retries failed requests).
 
+- You can now optionally deal with token persistence with doctrine cache. Just require doctrine/cache , instantiate a cache implementation.
+  tokens are now cached for a lifetime corresponding to their expire value.
+
 ## Running the tests
 
 First make sure you have all the dependencies in place by running `composer install --prefer-dist`, then simply run `./bin/phpunit`.

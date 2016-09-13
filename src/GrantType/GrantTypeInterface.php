@@ -4,14 +4,15 @@ namespace CommerceGuys\Guzzle\Oauth2\GrantType;
 
 use CommerceGuys\Guzzle\Oauth2\AccessToken;
 
+
 interface GrantTypeInterface
 {
     /**
-     * Get the token data returned by the OAuth2 server.
+     * @param bool $forceCache
      *
      * @return AccessToken
      */
-    public function getToken();
+    public function getToken($forceCache = false);
 
     /**
      * @param string $name
@@ -24,4 +25,12 @@ interface GrantTypeInterface
      * @return array
      */
     public function getConfig();
+
+    /**
+     * @param \Doctrine\Common\Cache\Cache $cache
+     * @return void
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setCache($cache);
 }
